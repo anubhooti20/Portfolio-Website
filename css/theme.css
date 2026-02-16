@@ -1,0 +1,753 @@
+/* ============================================
+   NAVY BLUE + GOLD PORTFOLIO THEME
+   Production-ready, responsive, no broken functionality
+   ============================================ */
+
+/* --------------------------------------------
+   CSS VARIABLES (MANDATORY COLOR SYSTEM)
+   -------------------------------------------- */
+:root {
+  /* Backgrounds – one navy only (like black version, but navy blue) */
+  --bg-primary: #0A192F;
+  --bg-secondary: #0A192F;
+  /* Accents */
+  --accent-primary: #FACC15;
+  --accent-secondary: #EAB308;
+  /* Text */
+  --text-primary: #E5E7EB;
+  --text-secondary: #9CA3AF;
+  /* Box/card interiors – navy one shade darker than page */
+  --box-bg: #06101f;
+  --box-bg-hover: #0d1a2d;
+  /* Borders */
+  --border-subtle: rgba(250, 204, 21, 0.25);
+  /* Gold glow */
+  --glow-gold: rgba(250, 204, 21, 0.4);
+  --glow-gold-soft: rgba(250, 204, 21, 0.2);
+  /* Transitions */
+  --transition: 0.3s ease;
+  --radius: 10px;
+  --radius-sm: 8px;
+}
+
+/* --------------------------------------------
+   TYPOGRAPHY
+   -------------------------------------------- */
+body {
+  font-family: 'Inter', 'Roboto', -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+h1.big, h1.big-2, h1.big-4 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------
+   GLOBAL LAYOUT & SECTIONS
+   -------------------------------------------- */
+.ftco-section {
+  background-color: var(--bg-primary);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.ftco-section .container {
+  max-width: 1140px;
+}
+
+/* Ensure content visible (override theme default) */
+.ftco-animate {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------
+   NAVBAR - Transparent, sticky, gold active/hover
+   -------------------------------------------- */
+#ftco-navbar.navbar::after,
+.ftco_navbar::after,
+.site-navbar-target::after {
+  display: none !important;
+}
+
+#ftco-navbar,
+.ftco-navbar-light {
+  border-bottom: none !important;
+  background: transparent !important;
+}
+
+.ftco-navbar-light .navbar-brand {
+  color: var(--text-primary) !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.ftco-navbar-light .navbar-brand:hover,
+.ftco-navbar-light .navbar-brand:focus {
+  color: var(--accent-primary) !important;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span {
+  color: var(--text-primary);
+  transition: color var(--transition);
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before {
+  background: var(--accent-primary) !important;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover span,
+.ftco-navbar-light .navbar-nav > .nav-item .nav-link.active span,
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:focus span {
+  color: var(--accent-primary) !important;
+}
+
+.ftco-navbar-light.scrolled {
+  background: var(--bg-primary) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.ftco-navbar-light.scrolled .nav-link {
+  color: var(--text-primary) !important;
+}
+
+.ftco-navbar-light.scrolled .nav-link.active {
+  color: var(--accent-primary) !important;
+}
+
+.ftco-navbar-light .navbar-toggler:hover,
+.ftco-navbar-light .navbar-toggler:focus {
+  color: var(--accent-primary) !important;
+}
+
+.site-navbar-target .nav-link::after {
+  display: none !important;
+}
+
+/* --------------------------------------------
+   HERO SECTION - Navy gradient, gold name, glow on image
+   -------------------------------------------- */
+.hero::before,
+.hero .slider-item::before,
+.hero .container::before,
+.hero .slider-text::before,
+.hero .row::before {
+  display: none !important;
+}
+
+.hero {
+  border-top: none !important;
+  background: var(--bg-primary) !important;
+  position: relative;
+}
+
+.hero .slider-item {
+  background: transparent !important;
+}
+
+.hero .slider-item .overlay {
+  background: linear-gradient(90deg, var(--bg-primary) 0%, transparent 50%) !important;
+  opacity: 0.85;
+}
+
+.hero .text .subheading {
+  color: var(--accent-primary) !important;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.hero .text h1 {
+  color: var(--text-primary) !important;
+}
+
+.hero .text h1 span {
+  color: var(--accent-primary) !important;
+}
+
+.hero .text h2 {
+  color: var(--text-secondary) !important;
+}
+
+/* Typing animation - gold cursor */
+#typing-animation {
+  color: var(--text-primary) !important;
+}
+
+#typing-animation::after {
+  color: var(--accent-primary) !important;
+}
+
+/* Profile image - cutout style: circular, gold glow, navy behind (no black box) */
+.hero .one-third.img {
+  box-shadow: 0 0 60px var(--glow-gold-soft), 0 0 120px var(--glow-gold-soft) !important;
+  border-radius: 50% !important;
+  overflow: hidden;
+  background-color: var(--bg-primary) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/* Hero slider area behind profile image uses navy so only the photo reads as cutout */
+.hero .slider-item .one-third.img,
+.owl-carousel.home-slider .slider-item .one-third.img {
+  background-color: var(--bg-primary) !important;
+}
+
+/* For a true “photo only” cutout: use a PNG with transparent background (e.g. from remove.bg) as images/bg.jpg */
+
+/* Hero fade-in */
+.hero .text .subheading { animation: themeFadeInUp 0.8s ease-out; }
+.hero .text h1 { animation: themeFadeInUp 0.8s ease-out 0.15s both; }
+.hero #typing-animation { animation: themeFadeInUp 0.8s ease-out 0.3s both; }
+.hero .text h2 { animation: themeFadeInUp 0.8s ease-out 0.45s both; }
+.hero .text .btn { animation: themeFadeInUp 0.8s ease-out 0.6s both; }
+
+@keyframes themeFadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------
+   BUTTONS - Gold bg, navy text, rounded, hover glow
+   -------------------------------------------- */
+.btn-primary {
+  background: var(--accent-primary) !important;
+  border: 1px solid var(--accent-primary) !important;
+  color: var(--bg-primary) !important;
+  border-radius: var(--radius) !important;
+  font-weight: 600;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition) !important;
+}
+
+.btn-primary:hover {
+  background: var(--accent-secondary) !important;
+  border-color: var(--accent-secondary) !important;
+  color: var(--bg-primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--glow-gold) !important;
+}
+
+.btn-white.btn-outline-white {
+  background: transparent !important;
+  border: 2px solid var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+  border-radius: var(--radius) !important;
+  font-weight: 600;
+  transition: all var(--transition) !important;
+}
+
+.btn-white.btn-outline-white:hover {
+  background: var(--accent-primary) !important;
+  color: var(--bg-primary) !important;
+  border-color: var(--accent-primary) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--glow-gold) !important;
+}
+
+#resume-section .btn-primary.py-4:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 35px var(--glow-gold) !important;
+}
+
+/* --------------------------------------------
+   SECTION HEADINGS - Sharp, visible (no blur)
+   -------------------------------------------- */
+/* Override template: big watermark text was rgba(255,255,255,0.1) - now visible gold tint */
+.heading-section h1.big,
+.heading-section h1.big.big-2 {
+  color: rgba(250, 204, 21, 0.22) !important;
+  opacity: 1 !important;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.heading-section h2 {
+  color: var(--text-primary) !important;
+}
+
+.heading-section .big-2 {
+  display: inline-block;
+}
+
+/* Intro text under section titles - clearly visible (was too faint) */
+.heading-section p {
+  color: var(--text-primary) !important;
+  opacity: 1 !important;
+  font-weight: 500;
+}
+
+.big-4 {
+  color: var(--accent-primary) !important;
+  font-weight: 700;
+}
+
+.heading-section .subheading {
+  color: var(--text-secondary) !important;
+}
+
+.underline {
+  background-image: linear-gradient(to right, transparent, var(--accent-primary), transparent) !important;
+  opacity: 0.8;
+  height: 3px;
+  border: none;
+}
+
+/* --------------------------------------------
+   ABOUT SECTION - Cards, dark navy, gold border
+   -------------------------------------------- */
+#about-section {
+  background-color: var(--bg-primary);
+}
+
+/* About: no box – same navy background only (like Projects section) */
+#about-section .overlay,
+#about-section .img-about,
+#about-section .img-about .overlay,
+#about-section .img-about .row,
+#about-section .about-img,
+#about-section .col-md-6.col-lg-5 .img {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#about-section .about-info .title-s,
+#about-section .skill-mf .title-s {
+  color: var(--accent-primary) !important;
+}
+
+#about-section .about-info p,
+#about-section .about-info span {
+  color: var(--text-primary) !important;
+}
+
+#about-section .about-info p span:last-child {
+  color: var(--text-secondary) !important;
+}
+
+/* Skills: more distance between each skill row */
+#about-section .skill-mf .progress {
+  background: rgba(250, 204, 21, 0.1) !important;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem !important;
+}
+
+#about-section .skill-mf span:not(.pull-right) {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+#about-section .skill-mf .title-s {
+  margin-bottom: 1rem !important;
+}
+
+#about-section .skill-mf .progress-bar {
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+  border-radius: var(--radius-sm);
+}
+
+#about-section .skill-mf span {
+  color: var(--text-primary) !important;
+}
+
+#about-section .heading-section h1.big,
+#about-section .heading-section h2 {
+  color: var(--text-primary) !important;
+}
+
+#about-section .heading-section p {
+  color: var(--text-primary) !important;
+}
+
+#about-section .about-info li span {
+  color: var(--text-primary) !important;
+}
+
+/* Force ALL about section text light (override any black from template) */
+#about-section .about-info,
+#about-section .overlay .about-info,
+#about-section .heading-section,
+#about-section .col-md-6.col-lg-7 p,
+#about-section .col-md-6.col-lg-7 ul.about-info,
+#about-section .col-md-6.col-lg-7 ul.about-info li,
+#about-section .col-md-6.col-lg-7 ul.about-info li span {
+  color: var(--text-primary) !important;
+}
+
+#about-section .about-info p span,
+#about-section .about-info span {
+  color: inherit !important;
+}
+
+#about-section .about-info .title-s {
+  color: var(--accent-primary) !important;
+}
+
+/* About right column: description paragraph and list must be readable */
+#about-section .heading-section p {
+  color: var(--text-primary) !important;
+}
+
+#about-section ul.about-info li span:first-child {
+  color: var(--accent-primary) !important;
+}
+
+#about-section ul.about-info li span:last-child {
+  color: var(--text-primary) !important;
+}
+
+.about-mf .about-img img:hover {
+  box-shadow: 0 12px 40px var(--glow-gold-soft) !important;
+}
+
+/* --------------------------------------------
+   RESUME SECTION - Cards with gold border
+   -------------------------------------------- */
+#resume-section {
+  background-color: var(--bg-primary);
+}
+
+.resume-wrap {
+  background: var(--box-bg) !important; /* darker navy */
+  border: 1px solid var(--border-subtle) !important;
+  border-left: 4px solid var(--accent-primary) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+}
+
+.resume-wrap:hover {
+  background: var(--box-bg-hover) !important;
+  transform: translateX(6px);
+  box-shadow: 0 10px 30px var(--glow-gold-soft) !important;
+}
+
+.resume-wrap .date {
+  color: var(--accent-primary) !important;
+  font-weight: 700;
+}
+
+.resume-wrap h2 {
+  color: var(--text-primary) !important;
+}
+
+.resume-wrap .position {
+  color: var(--text-secondary) !important;
+}
+
+.resume-wrap p,
+.resume-wrap li {
+  color: var(--text-secondary) !important;
+}
+
+/* --------------------------------------------
+   PROJECTS SECTION - Cards hover lift + glow
+   -------------------------------------------- */
+#project-section {
+  background-color: var(--bg-primary);
+}
+
+#project-section .heading-section p {
+  color: var(--text-primary) !important;
+}
+
+#resume-section .heading-section p {
+  color: var(--text-primary) !important;
+}
+
+.blog-entry {
+  background: var(--box-bg) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+}
+
+.blog-entry:hover {
+  background: var(--box-bg-hover) !important;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px var(--glow-gold-soft) !important;
+  border-color: rgba(250, 204, 21, 0.4) !important;
+}
+
+.blog-entry .block-20 {
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.blog-entry .text .heading,
+.blog-entry .text .heading a {
+  color: var(--text-primary) !important;
+  transition: color var(--transition);
+}
+
+.blog-entry:hover .text .heading a {
+  color: var(--accent-primary) !important;
+}
+
+.blog-entry .text p {
+  color: var(--text-secondary) !important;
+}
+
+.zoom-effect {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.blog-entry:hover .zoom-effect {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------
+   COUNTER SECTION - Dark navy cards, gold numbers
+   -------------------------------------------- */
+#section-counter {
+  position: relative;
+  z-index: 2;
+  background: var(--bg-primary) !important;
+}
+
+#section-counter .container,
+#section-counter .row {
+  position: relative;
+  z-index: 2;
+}
+
+.ftco-counter .block-18 {
+  background: var(--box-bg) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+}
+
+.ftco-counter .block-18:hover {
+  background: var(--box-bg-hover) !important;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px var(--glow-gold-soft) !important;
+}
+
+.ftco-counter .block-18 .number {
+  color: var(--accent-primary) !important;
+  font-weight: 700;
+}
+
+.ftco-counter .block-18 span {
+  color: var(--text-secondary) !important;
+}
+
+/* --------------------------------------------
+   GITHUB / HIREME SECTION - Clickable, themed
+   -------------------------------------------- */
+.ftco-hireme {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-primary) !important;
+}
+
+.ftco-hireme::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../images/bg_1.jpg) center/cover;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.ftco-hireme .row {
+  position: relative;
+  z-index: 2;
+}
+
+.ftco-hireme a {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.ftco-hireme h2 {
+  color: var(--text-primary) !important;
+}
+
+.ftco-hireme h2 a {
+  color: var(--accent-primary) !important;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.ftco-hireme h2 a:hover {
+  color: var(--accent-secondary) !important;
+  text-decoration: underline;
+}
+
+.ftco-hireme .heading h4 {
+  color: var(--text-secondary) !important;
+}
+
+/* --------------------------------------------
+   CONTACT SECTION - Cards, gold border, icons
+   -------------------------------------------- */
+.contact-info .box {
+  background: var(--box-bg) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition), border-color var(--transition) !important;
+}
+
+.contact-info .box:hover {
+  background: var(--box-bg-hover) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px var(--glow-gold-soft) !important;
+  border-color: var(--accent-primary) !important;
+}
+
+.contact-info .box h3 {
+  color: var(--text-primary) !important;
+}
+
+/* Contact card text - always light (never black) */
+.contact-info .box p,
+.contact-info .box a,
+.contact-info .box p a {
+  color: var(--text-primary) !important;
+  transition: color var(--transition);
+}
+
+.contact-info .box a:hover {
+  color: var(--accent-primary) !important;
+}
+
+/* Ensure contact section intro line is visible */
+#contact-section .heading-section p {
+  color: var(--text-primary) !important;
+}
+
+/* Contact cards: prevent email (and long text) from overflowing */
+.contact-info .box {
+  overflow: hidden;
+}
+
+.contact-info .box p,
+.contact-info .box a {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  display: inline-block;
+}
+
+.contact-info .box p.contact-email a,
+.contact-info .box .contact-email {
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.contact-info .icon span {
+  color: var(--accent-primary) !important;
+}
+
+/* Contact CTA "Have a Question" */
+#contact-section h2 span {
+  color: var(--accent-primary) !important;
+}
+
+/* --------------------------------------------
+   FOOTER & SOCIAL
+   -------------------------------------------- */
+.ftco-footer {
+  background: var(--bg-primary) !important;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ftco-footer p {
+  color: var(--text-secondary) !important;
+}
+
+.ftco-footer-social li a {
+  color: var(--text-secondary) !important;
+  transition: transform var(--transition), color var(--transition);
+}
+
+.ftco-footer-social li a:hover {
+  color: var(--accent-primary) !important;
+  transform: scale(1.2);
+}
+
+.ftco-footer-social .normal-txt {
+  color: var(--text-secondary) !important;
+}
+
+/* --------------------------------------------
+   COUNTER WRAP (About section)
+   -------------------------------------------- */
+.counter-wrap .text .number {
+  color: var(--accent-primary) !important;
+}
+
+.counter-wrap .text span {
+  color: var(--text-secondary) !important;
+}
+
+/* --------------------------------------------
+   LOADER (optional gold accent)
+   -------------------------------------------- */
+#ftco-loader .path {
+  stroke: var(--accent-primary) !important;
+}
+
+/* --------------------------------------------
+   RESPONSIVE
+   -------------------------------------------- */
+@media (max-width: 991.98px) {
+  .ftco-navbar-light {
+    background: var(--bg-primary) !important;
+  }
+
+  .hero .slider-item .overlay {
+    background: var(--bg-primary) !important;
+    opacity: 0.7;
+  }
+
+  .ftco-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero .text h1 {
+    font-size: 2rem !important;
+  }
+
+  #typing-animation {
+    font-size: 1.1rem !important;
+  }
+
+  .blog-entry .block-20 {
+    height: 180px;
+  }
+
+  .resume-wrap {
+    padding: 1.25rem !important;
+  }
+}
