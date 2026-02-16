@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -21,348 +21,33 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
 
-
-
-<style>
-
-/*======================================
-//--//-->   SMOOTH SCROLL & GLOBAL
-======================================*/
-html {
-  scroll-behavior: smooth;
-}
-
-/* Ensure all sections are visible even before scroll/JS (theme hides .ftco-animate by default) */
-.ftco-animate {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.about-mf .about-img img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-}
-
-
-.skill-mf .progress {
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 8px;
-  height: .7rem;
-  overflow: hidden;
-  background: rgba(0,0,0,0.06);
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background: linear-gradient(90deg, #ffbd39, #ffce6c);
-  border-radius: 8px;
-  transition: width 1s ease-out;
-}
-
-
-/*======================================
-//--//-->   TYPING ANIMATION + CURSOR
-======================================*/
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation::after {
-  content: "|";
-  animation: blink 0.7s step-end infinite;
-  color: #ffbd39;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-
-/*======================================
-//--//-->   HERO ENTRANCE
-======================================*/
-.hero .text .subheading {
-  animation: fadeInUp 0.8s ease-out;
-}
-.hero .text h1 {
-  animation: fadeInUp 0.8s ease-out 0.15s both;
-}
-.hero #typing-animation {
-  animation: fadeInUp 0.8s ease-out 0.3s both;
-}
-.hero .text h2 {
-  animation: fadeInUp 0.8s ease-out 0.45s both;
-}
-.hero .text .btn {
-  animation: fadeInUp 0.8s ease-out 0.6s both;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hero .text .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255,189,57,0.4);
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/*======================================
-//--//-->   REMOVE THICK LINE BELOW NAVBAR
-======================================*/
-#ftco-navbar.navbar::after,
-.ftco_navbar::after,
-.site-navbar-target::after {
-  display: none !important;
-}
-#ftco-navbar,
-.ftco-navbar-light {
-  border-bottom: none !important;
-}
-.hero::before,
-.hero .slider-item::before,
-.hero .container::before,
-.hero .slider-text::before,
-.hero .row::before {
-  display: none !important;
-}
-.hero {
-  border-top: none !important;
-}
-
-/*======================================
-//--//-->   NAV: LINE ONLY UNDER WORDS WITH SHADES (hover/active only)
-======================================*/
-.site-navbar-target .nav-link span {
-  position: relative;
-  transition: color 0.25s ease;
-}
-/* Use theme's span:before for underline; hide our extra ::after so only one line shows under shaded links */
-.site-navbar-target .nav-link::after {
-  display: none !important;
-}
-.site-navbar-target .nav-link:hover span,
-.site-navbar-target .nav-link.active span,
-.site-navbar-target .nav-link:focus span {
-  color: #ffbd39 !important;
-}
-
-
-/*======================================
-//--//-->   PROJECT CARDS
-======================================*/
-.blog-entry {
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  background: rgba(255,255,255,0.03);
-}
-.blog-entry:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-.blog-entry .block-20 {
-  border-radius: 12px 12px 0 0;
-  height: 220px;
-}
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  display: block;
-  height: 100%;
-}
-.blog-entry:hover .zoom-effect {
-  transform: scale(1.08);
-}
-
-.blog-entry .text {
-  transition: color 0.25s ease;
-}
-.blog-entry .text .heading,
-.blog-entry .text .heading a {
-  transition: color 0.25s ease;
-}
-.blog-entry:hover .text .heading a {
-  color: #ffbd39 !important;
-}
-
-
-/*======================================
-//--//-->   RESUME CARDS
-======================================*/
-.resume-wrap {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border-left: 4px solid transparent;
-}
-.resume-wrap:hover {
-  transform: translateX(6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  border-left-color: #ffbd39;
-}
-
-
-/*======================================
-//--//-->   BUTTONS
-======================================*/
-.btn-primary {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255,189,57,0.45);
-}
-/* My works button: change color on hover, keep the glow */
-.btn-white.btn-outline-white {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-}
-.btn-white.btn-outline-white:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255,189,57,0.5);
-  background: #ffbd39 !important;
-  color: #000 !important;
-  border-color: #ffbd39 !important;
-}
-
-
-/*======================================
-//--//-->   CONTACT BOXES
-======================================*/
-.contact-info .box {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 10px;
-}
-.contact-info .box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  border-color: #ffbd39;
-}
-.contact-info .box a:hover {
-  color: #ffbd39 !important;
-}
-
-
-/*======================================
-//--//-->   SECTION HEADINGS
-======================================*/
-.heading-section .big-2 {
-  display: inline-block;
-  transition: transform 0.4s ease;
-}
-.heading-section:hover .big-2 {
-  transform: scale(1.02);
-}
-
-
-/*======================================
-//--//-->   COUNTER BLOCKS
-======================================*/
-.counter-wrap .block-18 {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
-  padding: 1rem;
-}
-.counter-wrap .block-18:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(255,189,57,0.2);
-}
-
-
-/*======================================
-//--//-->   FOOTER SOCIAL LINKS
-======================================*/
-.ftco-footer-social li a {
-  transition: transform 0.25s ease, color 0.25s ease;
-  display: inline-block;
-}
-.ftco-footer-social li a:hover {
-  transform: scale(1.2);
-  color: #ffbd39 !important;
-}
-
-
-/*======================================
-//--//-->   DOWNLOAD CV BUTTON (Resume section)
-======================================*/
-#resume-section .btn-primary.py-4 {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#resume-section .btn-primary.py-4:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(255,189,57,0.5);
-}
-
-
-/*======================================
-//--//-->   GITHUB SECTION: make link clickable (override z-index: -1)
-======================================*/
-.ftco-hireme {
-  position: relative;
-  z-index: 1;
-}
-.ftco-hireme .row {
-  position: relative;
-  z-index: 2;
-}
-.ftco-hireme a {
-  position: relative;
-  z-index: 3;
-  pointer-events: auto;
-}
-
-
-/*======================================
-//--//-->   COUNTER SECTION: show full numbers above overlapping hireme
-======================================*/
-#section-counter {
-  position: relative;
-  z-index: 2;
-}
-#section-counter .container,
-#section-counter .row {
-  position: relative;
-  z-index: 2;
-}
-
-</style>
+    <!-- Theme: typing cursor blink + about img transition (theme.css has rest) -->
+    <style>
+      #typing-animation {
+        position: relative;
+        font-size: 30px;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+      }
+      #typing-animation::after {
+        content: "|";
+        animation: themeBlink 0.7s step-end infinite;
+        margin-left: 2px;
+      }
+      @keyframes themeBlink {
+        50% { opacity: 0; }
+      }
+      .about-mf .about-img img {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .about-mf .about-img img:hover {
+        transform: scale(1.02);
+      }
+    </style>
 
 
   </head>
@@ -517,11 +202,8 @@ html {
 					
 					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
 						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
+							<div class="col-md-12 ftco-animate">
 								<h2 class="mb-4">About Me</h2>
-								
 								<p>Hi, I'm Anubhooti Nagar, a data science enthusiast and Django web developer. Passionate about uncovering insights from data, I specialize in predictive modeling and visualization. With Django, I craft dynamic web experiences that marry aesthetics with functionality. Committed to staying ahead in both fields, I'm always exploring new techniques and technologies. 
 									Let's collaborate to create impactful solutions that leverage the power of data and code.</p>
 								<ul class="about-info mt-4 px-md-0 px-2">
@@ -674,10 +356,10 @@ html {
 			<!-- Yugyog.ai - AI Video Surveillance Platform -->
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
-				<a href="#" class="block-20 zoom-effect" style="background-image: url('images/yugyog.png');">
+				<a href="https://dashboard.yugyog.ai/login" target="_blank" rel="noopener noreferrer" class="block-20 zoom-effect" style="background-image: url('images/yugyog.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading">Yugyog.ai — AI Video Surveillance Platform</h3>
+				  <h3 class="heading"><a href="https://dashboard.yugyog.ai/login" target="_blank" rel="noopener noreferrer">Yugyog.ai — AI Video Surveillance Platform</a></h3>
 				  <p>Multi-tenant CCTV analytics backend (Django, DRF, PostgreSQL, Celery, Redis) for 100+ cameras. Real-time camera health via WebSockets, secure HLS streaming with GCP, NLP-based video search with spaCy, Stripe subscriptions with timezone-aware notifications.</p>
 				</div>
 			  </div>
@@ -685,10 +367,10 @@ html {
 			<!-- Spolto — Sports Coaching & Fitness Platform -->
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
-				<a href="#" class="block-20 zoom-effect" style="background-image: url('images/spolto.png');">
+				<a href="https://spolto.com/" target="_blank" rel="noopener noreferrer" class="block-20 zoom-effect" style="background-image: url('images/spolto.png');">
 				</a>
 				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading">Spolto — Sports Coaching & Fitness Platform</h3>
+				  <h3 class="heading"><a href="https://spolto.com/" target="_blank" rel="noopener noreferrer">Spolto — Sports Coaching & Fitness Platform</a></h3>
 				  <p>Modular Django backend for coaching, PlayPads, subscriptions, and CMS. OTP auth via Twilio/AWS SNS, Razorpay payments with webhook verification, caching and query optimization for 200ms API improvement.</p>
 				</div>
 			  </div>
@@ -789,7 +471,7 @@ html {
 			<!-- <div class="container"> -->
 				<div class="row justify-content-center">
 					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on <a href="https://github.com/anubhooti20" target="_blank" rel="noopener noreferrer" style="color: #ffbd39; text-decoration: none;">Github</a></h2>
+						<h2>More projects on <a href="https://github.com/anubhooti20" target="_blank" rel="noopener noreferrer">Github</a></h2>
 						<div class="heading"> <h4> I love to solve problems &amp; uncover hidden data stories </h4>
 						<br>
 						<p><a href="https://github.com/anubhooti20" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-3 px-5">GitHub</a></p>
@@ -828,7 +510,7 @@ html {
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">anubhooti.nagar0001@gmail.com</a></p>
+	            <p class="contact-email"><a href="mailto:anubhooti.nagar0001@gmail.com">anubhooti.nagar0001@gmail.com</a></p>
 	          </div>
           </div>
 		  <div class="col-md-6 col-lg-3 d-flex ftco-animate">
